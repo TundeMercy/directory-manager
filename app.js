@@ -10,7 +10,6 @@ directory.addStaff({id: 1, name: 'Tunde Ajagbe', phone: 8106887783});
 directory.addStaff({id: 2, name: 'Tunde Ajagbe', phone: 8106887783});
 directory.addStaff({id: 3, name: 'Tunde Ajagbe', phone: 8106887783});
 
-console.log(directory.contacts);
 app.get('/api/directory', function(req, res){
     res.status(200);
     res.send(JSON.stringify(directory.contacts));
