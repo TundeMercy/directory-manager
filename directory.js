@@ -1,27 +1,5 @@
 'use strict'
 
-/*  module.exports = (function(){
-    const contact = [];
-
-    return {
-        contacts: contact,
-        addStaff: function(staff){
-            contact.push(staff);
-        },
-
-        getStaff: function(staffID){
-            const staff = this.contacts.find(function(staf){
-               return staf.id === staffID;
-            });
-
-            if(staff){ return staff;}
-            else {return "No such staff in our directory";}  
-
-        }
-    };
-})(); */
-
-
 module.exports = class Directory{
 
     // initialising a new instance with an empty
