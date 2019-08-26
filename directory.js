@@ -2,7 +2,7 @@
 
 module.exports = class Directory{
 
-    // initialising a new instance with an empty
+    // initializing a new instance with an empty
     // array of staff.
     constructor(){
         this.directory = [];
@@ -15,7 +15,7 @@ module.exports = class Directory{
         return this.directory;
     }
 
-    // adding a given staff to the main directory
+    // adding a given staff to the directory
     // of the calling instance
     addStaff(staff){
         this.getDirectory().push(staff);
@@ -33,11 +33,11 @@ module.exports = class Directory{
 
     // Deleting the staff with the specified staffID.
     // Returns the deleted staff if found,
-    // otherwisw, returns "undefined".
+    // otherwise, returns "undefined".
     deleteStaff(staffID){
         const staff = this.directory.indexOf(
             this.directory.find( s => { return s.id == staffID;}));
-        if(staff && staff !== -1) return this.directory.splice(staff, 1)[0];
+        if(staff !== -1) return this.directory.splice(staff, 1)[0];
     }
 
 }

@@ -1,6 +1,19 @@
 'use strict'
 
+/*
+  Prefix the command to run the app with 'DEBUG=app' 
+  to get the messages logged on the console...
+  This is due to the use of debug.js
+
+  e.g DEBUG=app nodemon start
+*/
+
+
+
+
 // importing all dependencies
+const chalk = require('chalk');
+const debug = require('debug')('app');
 const express = require('express');
 const Directory = require('./directory');
 const bodyParser = require('body-parser'); //middle-ware for parsing requests' body
@@ -37,7 +50,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-//handle request to get the all the staff
+//handle request to get all the staff
 //in "this" directory.
 //Returns an array in JSON form
 app.get('/api/directory', function(req, res){
@@ -97,5 +110,5 @@ app.post('/api/directory', (req, res) => {
 });
 
 app.listen(port, function(){
-    console.log(`listening on port: ${port}`);
+    debug(chalk.yellow(`listening on port:  ${chalk.red.bold(port)}`));
 });
